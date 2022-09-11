@@ -1,1 +1,15 @@
-<p>double-bars works!</p>
+<h1>Double Bars</h1>
+<hr />
+
+<section class="row">
+  <div class="col-md-6">
+    <app-bar-chart
+      [horizontal]="true"
+      [barChartData]="productoData"
+    ></app-bar-chart>
+  </div>
+
+  <div class="col-md-6">
+    <app-bar-chart [barChartData]="proveedoresData"></app-bar-chart>
+  </div>
+</section>
