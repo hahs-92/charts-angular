@@ -8,6 +8,7 @@ import { DonutComponent } from './pages/donut/donut.component';
 import { DonutHttpComponent } from './pages/donut-http/donut-http.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,8 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     DoubleBarsComponent,
     DonutComponent,
     DonutHttpComponent,
-    BarChartComponent
+    BarChartComponent,
   ],
-  imports: [
-    CommonModule,
-    ChartsRoutingModule
-  ]
+  imports: [CommonModule, ChartsRoutingModule, NgChartsModule],
 })
-export class ChartsModule { }
+export class ChartsModule {}

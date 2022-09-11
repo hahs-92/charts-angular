@@ -30,5 +30,3 @@ export class MenuComponent {
     },
   ];
 }
-
-// => 333
