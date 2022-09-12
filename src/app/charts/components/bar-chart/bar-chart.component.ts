@@ -1,7 +1,14 @@
 // documentacion de charts
 //https://valor-software.com/ng2-charts/#BarChart
 
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewChild,
+} from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 
@@ -11,6 +18,8 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['./bar-chart.component.css'],
 })
 export class BarChartComponent implements OnInit {
+  barChartType: ChartType = 'bar';
+  @Input() barChartData!: ChartData<'bar'>;
   @Input() horizontal: boolean = false;
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
@@ -26,10 +35,6 @@ export class BarChartComponent implements OnInit {
     },
     indexAxis: 'x',
   };
-
-  barChartType: ChartType = 'bar';
-
-  @Input() barChartData!: ChartData<'bar'>;
 
   ngOnInit(): void {
     if (this.horizontal) {
