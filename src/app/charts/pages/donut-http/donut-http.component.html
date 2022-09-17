@@ -2,7 +2,7 @@
 <hr />
 
 <section
-  *ngIf="doughnutChartData.datasets.length < 0; else divChart"
+  *ngIf="doughnutChartLabels.length < 1; else divChart"
   class="alert alert-info"
 >
   Loading...

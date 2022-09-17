@@ -23,17 +23,13 @@ export class DonutHttpComponent implements OnInit {
   constructor(private chartService: ChartsServiceService) {}
 
   ngOnInit(): void {
-    this.chartService.getChartData().subscribe({
+    this.chartService.getDoughnutData().subscribe({
       error: (err) => {
         console.error('ERROR_CHART :', err);
       },
-      next: (dataChart) => {
-        const data = Object.values(dataChart);
-        const labels = Object.keys(dataChart);
-
+      next: ({ labels, data }) => {
         this.doughnutChartLabels = labels;
 
-        this.doughnutChartLabels = labels;
         this.doughnutChartData = {
           labels: labels,
           datasets: [{ data: data }],
