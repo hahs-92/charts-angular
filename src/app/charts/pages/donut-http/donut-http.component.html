@@ -1,11 +1,20 @@
-<h1>Ventas</h1>
+<h1>Redes Sociales</h1>
 <hr />
+
+<section
+  *ngIf="doughnutChartData.datasets.length < 0; else divChart"
+  class="alert alert-info"
+>
+  Loading...
+</section>
 
 <section class="row">
   <div class="col">
-    <div style="display: block">
-      <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType">
-      </canvas>
-    </div>
+    <ng-template #divChart>
+      <div style="display: block">
+        <canvas baseChart [data]="doughnutChartData" [type]="doughnutChartType">
+        </canvas>
+      </div>
+    </ng-template>
   </div>
 </section>
